@@ -46,7 +46,7 @@ class Bridge {
 
   drawVertices(vertices) {
     beginShape();
-    fill("#FFF717");
+    fill("#FFFFFF");
     noStroke();
 
     for (let i = 0; i < vertices.length; i++) {
