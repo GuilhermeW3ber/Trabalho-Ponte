@@ -66,6 +66,17 @@ function draw() {
 
   for (var stone of stones) {
     stone.show();
+    var pos = stone.body.position;
+    
+    var distance = dist(winston.position.x, winston.position.y, pos.x, pos.y);
+
+    if (distance <= 50) {
+      winston.velocityX = 0;
+      winston.rotationSpeed=0;
+      Matter.Body.setVelocity(stone.body, { x: 10, y: -10 });
+      winston.changeImage("sad");
+      collided = true;
+    }
   }
 
   if(winston.x>windowWidth-100){
